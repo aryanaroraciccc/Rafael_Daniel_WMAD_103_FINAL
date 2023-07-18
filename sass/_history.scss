@@ -2,7 +2,7 @@
     --main_text_color: rgba(255, 251, 230, 1);
     --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
     --hover_meal_color: rgba(255, 227, 191, 0.84);
-    --hover_selected_nav_button:rgba(255, 251, 230, 0.53);
+    --hover_selected_nav_link:rgba(255, 251, 230, 0.53);
     --background_color: rgba(7, 4, 4, 1);
 }
 
@@ -18,39 +18,24 @@ body {
     margin-left: 1.5rem;
 }
 
-@mixin button_nav_bar {
+@mixin navbar_link {
     width: 100px;
     height: 45px;
-    font-family: 'Poiret One';
+    text-decoration: none;
+    font-family: 'Poiret One', sans-serif;
     font-size: 1rem;
     border-radius: 6px;
-    box-shadow: none;
-    border: none;
     background-color: var(--blueish_menu_button_color);
     color: var(--main_text_color);
-    margin: auto {
-        top: 1.5rem;
-        left: 1rem;
-        right: 1rem;
-    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 1rem 0 1rem;
     cursor: pointer;
-}
-
-@mixin button_nav_bar_selected {
-    width: 100px;
-    height: 45px;
-    font-size: 1rem;
-    font-family: 'Poiret One';
-    border: none;
-    border-radius: 6px;
-    background-color: var(--hover_selected_nav_button);
-    color: var(--main_text_color);
-    margin: auto {
-        top: 1.5rem;
-        left: 1rem;
-        right: 1rem;
+    transition: background-color 200ms ease-in-out;
+    &:hover {
+        background-color: var(--hover_selected_nav_link);
     }
-    cursor: pointer;
 }
 
 @mixin h2_title_section {
@@ -105,13 +90,13 @@ body {
         justify-content: space-between;
         flex-direction: row;
 
-
-        button.nav_bar {
-            @include button_nav_bar()
+        .navbar-link {
+            @include navbar_link;
         }
 
-        button.nav_bar_current_page {
-            @include button_nav_bar_selected()
+        .navbar-link--selected {
+            @include navbar-link;
+            background-color: var(--hover_selected_nav_link);
         }
     }
 }
