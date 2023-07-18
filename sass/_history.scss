@@ -3,10 +3,14 @@
     --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
     --hover_meal_color: rgba(255, 227, 191, 0.84);
     --hover_selected_nav_button:rgba(255, 251, 230, 0.53);
+    --background_color: rgba(7, 4, 4, 1);
 }
 
 body {
-    width: 1400px;
+    height: 100vh;
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--background_color);
 }
 @mixin brand_logo {
     width: 306px;
@@ -57,10 +61,25 @@ body {
     }
 }
 
+@mixin h3_meal_box_title {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: auto {
+        top: 4rem;
+    }
+}
+
 @mixin paragraph_style {
     line-height:3rem;
     font-size: 1.70rem;
     letter-spacing: 2px;
+}
+
+@mixin images_boxes {
+    width: 400px;
+    height: 400px;
+    margin-top: 2rem;
 }
 
 // ---------------------------------------------------------------------
@@ -94,7 +113,7 @@ body {
 }
 
 // ---------------------------------------------------------------------
-//             Here you can modify the history section
+//             Here you can modify the first history section
 // ---------------------------------------------------------------------
 
 #history_section {
@@ -134,11 +153,107 @@ body {
 
     #philosophy_title {
         h2 {
-            @include h2_title_section()
+            @include h2_title_section();
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-column-gap: 1.2rem;
+            align-items: center;
+
+
+            &::before , &::after {
+                content: "";
+                display: block;
+                height: 1px;
+                background-color: var(--main_text_color);
+            }
         }
     }
 
     pre {
         @include paragraph_style()
     }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the Meals section
+// ---------------------------------------------------------------------
+
+#meals-section {
+    #brunch_box {grid-area: brunch;}
+    #lunch_box {grid-area: lunch;}
+    #dinner_box {grid-area: dinner;}
+    #desserts_box {grid-area: dessert;}
+    margin-bottom: 15rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "brunch lunch"
+    "dinner dessert";
+    justify-items: center;
+    margin-inline: 15rem;
+
+    .meal_box {
+        margin-top: 3rem
+    }
+
+    h3 {
+        @include h3_meal_box_title();
+
+        &::after {
+            content:' ';
+            display:block;
+            border: 0.3px solid var(--main_text_color);
+            margin-inline: 18px;
+        }
+    }
+
+    img { 
+        @include images_boxes();
+    }
+
+    pre.no_display_text {
+        display: none;
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the footer section
+// ---------------------------------------------------------------------
+
+hr.footer {
+    margin: auto {
+        top: 3rem;
+        bottom: 6rem;
+        left: 1.2rem;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5rem;
+    #brand_logo_footer {
+
+        img {
+            @include brand_logo();
+            margin:none;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-left: -10rem;
+    }
+
+    #footer_icons img {
+        width: 45px;
+        height: 51px;
+    }
+
+
 }
