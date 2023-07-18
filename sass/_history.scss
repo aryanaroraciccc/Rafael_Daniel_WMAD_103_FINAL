@@ -1,0 +1,274 @@
+:root {
+    --main_text_color: rgba(255, 251, 230, 1);
+    --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
+    --hover_meal_color: rgba(255, 227, 191, 0.84);
+    --hover_selected_nav_button:rgba(255, 251, 230, 0.53);
+    --background_color: rgba(7, 4, 4, 1);
+}
+
+body {
+    background-color: var(--background_color);
+}
+
+
+@mixin brand_logo {
+    width: 306px;
+    height: 41px;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+}
+
+@mixin button_nav_bar {
+    width: 100px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 6px;
+    box-shadow: none;
+    border: none;
+    background-color: var(--blueish_menu_button_color);
+    color: var(--main_text_color);
+    margin: auto {
+        top: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+    }
+    cursor: pointer;
+}
+
+@mixin button_nav_bar_selected {
+    width: 100px;
+    height: 45px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    background-color: var(--hover_selected_nav_button);
+    color: var(--main_text_color);
+    margin: auto {
+        top: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+    }
+    cursor: pointer;
+}
+
+@mixin h2_title_section {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: auto {
+        top: 12rem;
+        bottom: 10rem;
+    }
+}
+
+@mixin h3_meal_box_title {
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: 2px;
+    margin: auto {
+        top: 4rem;
+    }
+}
+
+@mixin paragraph_style {
+    line-height: 3rem;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+}
+
+@mixin images_boxes {
+    width: 400px;
+    height: 400px;
+    margin-top: 0.3rem;
+    padding: 1rem;
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the nav buttons section
+// ---------------------------------------------------------------------
+
+#nav_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #brand-image {
+        img {
+            @include brand_logo()
+        }
+    }
+
+    #buttons_top {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+
+        button.nav_bar {
+            @include button_nav_bar()
+        }
+
+        button.nav_bar_current_page {
+            @include button_nav_bar_selected()
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the first history section
+// ---------------------------------------------------------------------
+
+#history_section {
+
+    h2.section-title {
+        @include h2_title_section;
+        font-size: 4.5rem;
+    }
+
+    #history_paragraph {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto {
+            bottom: 15rem;
+        }
+
+        p {
+            @include paragraph_style();
+            margin-left: 1rem;
+        }
+
+        img {
+            width: 420px;
+            height: auto;
+            margin-left: 1.5rem;
+            }
+    }
+}
+
+
+// ---------------------------------------------------------------------
+//             Here you can modify the philosophy section
+// ---------------------------------------------------------------------
+
+#philosophy_history_paragraph {
+
+    #philosophy_title {
+        h2 {
+            @include h2_title_section();
+            display: grid;
+            grid-template-columns: 1fr max-content 1fr;
+            grid-column-gap: 1.2rem;
+            align-items: center;
+
+
+            &::before , &::after {
+                content: "";
+                display: block;
+                height: 1px;
+                background-color: var(--main_text_color);
+            }
+        }
+    }
+
+    p {
+        @include paragraph_style();
+        text-align:center;
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the Meals section
+// ---------------------------------------------------------------------
+
+#meals-section {
+    #brunch_box {grid-area: brunch;}
+    #lunch_box {grid-area: lunch;}
+    #dinner_box {grid-area: dinner;}
+    #desserts_box {grid-area: dessert;}
+    margin-bottom: 15rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas:
+    "brunch lunch"
+    "dinner dessert";
+    justify-items: center;
+    margin-inline: 15rem;
+
+    .meal_box {
+        margin-top: 3rem
+    }
+
+    h3 {
+        @include h3_meal_box_title();
+
+        &::after {
+            content:' ';
+            display:block;
+            border: 0.3px solid var(--main_text_color);
+            margin-inline: 30px;
+        }
+    }
+
+    img {
+        @include images_boxes();
+    }
+
+    pre.no_display_text {
+        display: none;
+        // color: white;
+        // font-size: 20px;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // -webkit-transform: translate(-50%, -50%);
+        // -ms-transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
+        // text-align: center;
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the footer section
+// ---------------------------------------------------------------------
+
+hr.footer {
+    margin: auto {
+        top: 3rem;
+        bottom: 6rem;
+        left: 1.2rem;
+        right: 1.2rem;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5rem;
+    #brand_logo_footer {
+
+        img {
+            @include brand_logo();
+            margin:none;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-left: -10rem;
+    }
+
+    #footer_icons svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--main_text_color);
+        margin-left: 0.5rem;
+    }
+
+
+}
