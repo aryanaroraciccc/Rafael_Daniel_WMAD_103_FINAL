@@ -1,5 +1,5 @@
 :root {
-    --main_text_color: rgba(255, 251, 230, 1);
+    --main_text_color: #fffbe6;
     --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
     --hover_meal_color: rgba(255, 227, 191, 0.84);
     --hover_selected_nav_link:rgba(255, 251, 230, 0.53);
@@ -12,10 +12,11 @@ body {
 
 
 @mixin brand_logo {
-    text-decoration: underline;
     font-size: 3rem;
     margin-top: 1rem;
     margin-left: 1.5rem;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--main_text_color);
 }
 
 @mixin navbar_link {
@@ -188,6 +189,30 @@ body {
         margin-top: 3rem
     }
 
+    .meal_container {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        &:hover .text_overlay {
+            opacity: 0.5;
+        }
+    }
+
+    .text_overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        position: absolute;
+        border-radius: 5px;
+        top: 22px;
+        left: 16px;
+        width: 100%;
+        height: 100%;
+        background-color: aqua;
+        z-index: 1;
+    }
+
     h3 {
         @include h3_meal_box_title();
 
@@ -251,10 +276,10 @@ footer {
         margin-left: -10rem;
     }
 
-    #footer_icons svg {
+    #footer_icons img {
         width: 40px;
         height: 40px;
-        fill: var(--main_text_color);
+        filter: invert(100%);
         margin-left: 0.5rem;
     }
 
