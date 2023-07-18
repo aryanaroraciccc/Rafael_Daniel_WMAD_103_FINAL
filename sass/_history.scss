@@ -1,0 +1,144 @@
+:root {
+    --main_text_color: rgba(255, 251, 230, 1);
+    --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
+    --hover_meal_color: rgba(255, 227, 191, 0.84);
+    --hover_selected_nav_button:rgba(255, 251, 230, 0.53);
+}
+
+body {
+    width: 1400px;
+}
+@mixin brand_logo {
+    width: 306px;
+    height: 41px;
+    margin-top: 2rem;
+    margin-left: 1.5rem;
+}
+
+@mixin button_nav_bar {
+    width: 155px;
+    height: 69px;
+    font-size: 2rem;
+    border-radius: 4px;
+    box-shadow: none;
+    border: none;
+    background-color: var(--blueish_menu_button_color);
+    color: var(--main_text_color);
+    margin: auto {
+        top: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+    }
+    cursor: pointer;
+}
+
+@mixin button_nav_bar_selected {
+    width: 155px;
+    height: 69px;
+    font-size: 2rem;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--hover_selected_nav_button);
+    color: var(--main_text_color);
+    margin: auto {
+        top: 1.5rem;
+        left: 1rem;
+        right: 1rem;
+    }
+    cursor: pointer;
+}
+
+@mixin h2_title_section {
+    font-size: 3rem;
+    text-align: center;
+    margin: auto {
+        top: 12rem;
+        bottom: 10rem;
+    }
+}
+
+@mixin paragraph_style {
+    line-height:3rem;
+    font-size: 1.70rem;
+    letter-spacing: 2px;
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the nav buttons section
+// ---------------------------------------------------------------------
+
+#nav_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    #brand-image {
+        img {
+            @include brand_logo()
+        }
+    }
+
+    #buttons_top {
+        display: flex;
+        flex-direction: row;
+
+
+        button.nav_bar {
+            @include button_nav_bar()
+        }
+
+        button.nav_bar_current_page {
+            @include button_nav_bar_selected()
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the history section
+// ---------------------------------------------------------------------
+
+#history_section {
+
+    h2.section-title {
+        @include h2_title_section;
+    }
+
+    #history_paragraph {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: auto {
+            bottom: 15rem;
+        }
+
+        pre {
+            @include paragraph_style()
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            margin: auto {
+                left: 1rem;
+                right: -10rem;
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------
+//             Here you can modify the philosophy section
+// ---------------------------------------------------------------------
+
+#philosophy_history_paragraph {
+
+    #philosophy_title {
+        h2 {
+            @include h2_title_section()
+        }
+    }
+
+    pre {
+        @include paragraph_style()
+    }
+}
