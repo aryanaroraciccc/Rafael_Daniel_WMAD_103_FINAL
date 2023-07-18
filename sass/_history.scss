@@ -7,11 +7,10 @@
 }
 
 body {
-    height: 100vh;
-    width: 100%;
-    padding: 2rem;
     background-color: var(--background_color);
 }
+
+
 @mixin brand_logo {
     width: 306px;
     height: 41px;
@@ -20,10 +19,10 @@ body {
 }
 
 @mixin button_nav_bar {
-    width: 155px;
-    height: 69px;
-    font-size: 2rem;
-    border-radius: 4px;
+    width: 100px;
+    height: 45px;
+    font-size: 1rem;
+    border-radius: 6px;
     box-shadow: none;
     border: none;
     background-color: var(--blueish_menu_button_color);
@@ -37,11 +36,11 @@ body {
 }
 
 @mixin button_nav_bar_selected {
-    width: 155px;
-    height: 69px;
-    font-size: 2rem;
+    width: 100px;
+    height: 45px;
+    font-size: 1rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     background-color: var(--hover_selected_nav_button);
     color: var(--main_text_color);
     margin: auto {
@@ -54,6 +53,7 @@ body {
 
 @mixin h2_title_section {
     font-size: 3rem;
+    letter-spacing: 3px;
     text-align: center;
     margin: auto {
         top: 12rem;
@@ -71,15 +71,16 @@ body {
 }
 
 @mixin paragraph_style {
-    line-height:3rem;
-    font-size: 1.70rem;
+    line-height: 3rem;
+    font-size: 1.7rem;
     letter-spacing: 2px;
 }
 
 @mixin images_boxes {
     width: 400px;
     height: 400px;
-    margin-top: 2rem;
+    margin-top: 0.3rem;
+    padding: 1rem;
 }
 
 // ---------------------------------------------------------------------
@@ -90,7 +91,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    
+
     #brand-image {
         img {
             @include brand_logo()
@@ -99,6 +100,7 @@ body {
 
     #buttons_top {
         display: flex;
+        justify-content: space-between;
         flex-direction: row;
 
 
@@ -120,6 +122,7 @@ body {
 
     h2.section-title {
         @include h2_title_section;
+        font-size: 4.5rem;
     }
 
     #history_paragraph {
@@ -130,20 +133,19 @@ body {
             bottom: 15rem;
         }
 
-        pre {
-            @include paragraph_style()
+        p {
+            @include paragraph_style();
+            margin-left: 1rem;
         }
 
         img {
-            width: 100%;
+            width: 420px;
             height: auto;
-            margin: auto {
-                left: 1rem;
-                right: -10rem;
+            margin-left: 1.5rem;
             }
-        }
     }
 }
+
 
 // ---------------------------------------------------------------------
 //             Here you can modify the philosophy section
@@ -169,8 +171,9 @@ body {
         }
     }
 
-    pre {
-        @include paragraph_style()
+    p {
+        @include paragraph_style();
+        text-align:center;
     }
 }
 
@@ -188,7 +191,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, auto);
     grid-template-rows: repeat(2, auto);
-    grid-template-areas: 
+    grid-template-areas:
     "brunch lunch"
     "dinner dessert";
     justify-items: center;
@@ -205,16 +208,25 @@ body {
             content:' ';
             display:block;
             border: 0.3px solid var(--main_text_color);
-            margin-inline: 18px;
+            margin-inline: 30px;
         }
     }
 
-    img { 
+    img {
         @include images_boxes();
     }
 
     pre.no_display_text {
         display: none;
+        // color: white;
+        // font-size: 20px;
+        // position: absolute;
+        // top: 50%;
+        // left: 50%;
+        // -webkit-transform: translate(-50%, -50%);
+        // -ms-transform: translate(-50%, -50%);
+        // transform: translate(-50%, -50%);
+        // text-align: center;
     }
 }
 
@@ -227,6 +239,7 @@ hr.footer {
         top: 3rem;
         bottom: 6rem;
         left: 1.2rem;
+        right: 1.2rem;
     }
 }
 
@@ -250,9 +263,11 @@ footer {
         margin-left: -10rem;
     }
 
-    #footer_icons img {
-        width: 45px;
-        height: 51px;
+    #footer_icons svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--main_text_color);
+        margin-left: 0.5rem;
     }
 
 
