@@ -1,1 +1,1 @@
-*{margin:0;padding:0}body{background-color:#000;color:#fff}/*# sourceMappingURL=styles.css.map */
+*{margin:0;padding:0}body{background-color:#000;color:#fff}:root{--main_text_color: #fffbe6;--blueish_menu_button_color: rgba(47, 72, 88, 0.53);--hover_meal_color: rgba(255, 227, 191, 0.84);--hover_selected_nav_link:rgba(255, 251, 230, 0.53);--background_color: rgba(7, 4, 4, 1)}body{background-color:var(--background_color)}/*# sourceMappingURL=styles.css.map */

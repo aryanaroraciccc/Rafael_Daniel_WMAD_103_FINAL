@@ -1,0 +1,51 @@
+
+:root {
+    --main_text_color: #fffbe6;
+    --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
+    --hover_meal_color: rgba(255, 227, 191, 0.84);
+    --hover_selected_nav_link:rgba(255, 251, 230, 0.53);
+    --background_color: rgba(7, 4, 4, 1);
+}
+
+body {
+    background-color: var(--background_color);
+}
+
+
+@mixin brand_logo {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--main_text_color);
+}
+
+@mixin navbar_link {
+    width: 100px;
+    height: 45px;
+    text-decoration: none;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: var(--blueish_menu_button_color);
+    color: var(--main_text_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 1rem 0 1rem;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+    &:hover {
+        background-color: var(--hover_selected_nav_link);
+    }
+}
+
+@mixin h2_title_section {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: auto {
+        top: 12rem;
+        bottom: 10rem;
+    }
+}
