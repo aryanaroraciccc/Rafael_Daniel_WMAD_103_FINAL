@@ -18,6 +18,7 @@ body {
     margin-left: 1.5rem;
     letter-spacing: 3px;
     border-bottom: 1px solid var(--main_text_color);
+    font-family: 'Poiret One', sans-serif;
 }
 
 @mixin navbar_link {
@@ -89,7 +90,7 @@ body {
 h1.title_section {
     text-align: center;
     margin-top: 10rem;
-    font-family: 'Arimo', sans-serif;
+    font-family: 'Poiret One', sans-serif;
     font-size: 3rem;
     color: var(--main_text_color);
 }
@@ -166,6 +167,10 @@ footer {
     align-items: center;
     padding-bottom: 5rem;
     color: var(--main_text_color);
+
+    #address_footer {
+        font-family: 'Arimo', sans-serif;
+    }
     #brand_logo_footer {
         display: flex;
         justify-content: center;
