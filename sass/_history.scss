@@ -283,6 +283,69 @@ footer {
         filter: invert(100%);
         margin-left: 0.5rem;
     }
-
-
 }
+
+
+// ---------------------------------------------------------------------
+//                          Media Queries!!!
+// ---------------------------------------------------------------------
+
+@media screen and (max-width: 990px) {
+    #nav_bar #brand-image h1 {
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+        letter-spacing: 3px;
+        border-bottom: 1px solid var(--main_text_color);
+    }
+
+    #history_title { grid-area: title; }
+    #image_hands { grid-area: hands; }
+    #paragraph_ { grid-area: paragraph; }
+
+    #history_section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas: 
+            "title"
+            "hands"
+            "paragraph";
+    }
+
+    #image_hands img {
+        width: 200px;
+        height: auto;
+    }
+    
+    
+    #meals-section {
+        display: grid;
+        grid-template-columns: auto;
+        justify-content: center;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+        "brunch"
+        "lunch"
+        "dinner"
+        "dessert";
+    }
+    
+    
+    footer {
+        justify-content: space-between;
+    }
+    
+    footer #address_footer {
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer #footer_icons {
+        margin-right: 2rem;
+    }
+}
+    
+
