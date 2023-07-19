@@ -1,12 +1,20 @@
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: #000;
-  color:rgba(255, 251, 230, 1);
+  margin: 0;
+  background-color: #222;
   font-family: 'Arimo', sans-serif;
+  color: $white;
+}
+
+a {
+  color: $blue;
+  text-decoration: none;
+  &:hover {
+    color: darken($blue, 20%);
+  }
 }
 
 h1, h2, h3, h4, h5, h6 {

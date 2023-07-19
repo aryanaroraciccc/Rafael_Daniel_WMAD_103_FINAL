@@ -1,0 +1,288 @@
+:root {
+    --main_text_color: #fffbe6;
+    --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
+    --hover_meal_color: rgba(255, 227, 191, 0.84);
+    --hover_selected_nav_link:rgba(255, 251, 230, 0.53);
+    --background_color: rgba(7, 4, 4, 1);
+}
+
+body {
+    background-color: var(--background_color);
+}
+
+
+@mixin brand_logo {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--main_text_color);
+    font-family: 'Poiret One', sans-serif;
+}
+
+@mixin navbar_link {
+    width: 100px;
+    height: 45px;
+    text-decoration: none;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 1rem;
+    border-radius: 6px;
+    background-color: var(--blueish_menu_button_color);
+    color: var(--main_text_color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 1rem 0 1rem;
+    cursor: pointer;
+    transition: background-color 200ms ease-in-out;
+    &:hover {
+        background-color: var(--hover_selected_nav_link);
+    }
+}
+
+@mixin h2_title_section {
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: auto {
+        top: 12rem;
+        bottom: 10rem;
+    }
+}
+
+// ---------------------------------------------------------
+//             Here you can modify the nav section
+// ---------------------------------------------------------      
+
+#nav_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: var(--main_text_color);
+    position: relative;
+    z-index: 1000;
+
+    #brand-image {
+        h1 {
+            @include brand_logo()
+        }
+    }
+
+    #buttons_top {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .navbar-link {
+            @include navbar_link;
+        }
+
+        .navbar-link--selected {
+            @include navbar-link;
+            background-color: var(--hover_selected_nav_link);
+        }
+    }
+}
+
+// ---------------------------------------------------------
+//             Here you can modify the menu section
+// ---------------------------------------------------------
+
+h1.title_section {
+    text-align: center;
+    font-family: 'Poiret One', sans-serif;
+    font-size: 4.5rem;
+    color: var(--main_text_color);
+    z-index: 150;
+    position: relative;
+}
+
+.main_title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    background-image: url(../images/menu_background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000;
+        opacity: 0.3;
+        z-index: 100;
+    }
+
+}
+
+#brunch-section {grid-area: brunch;}
+#lunch_section {grid-area: lunch;}
+#dinner_section {grid-area: dinner;}
+#dessert_section {grid-area: dessert;}
+
+#container {
+    display: grid;
+    justify-content: space-between;
+    justify-items: center;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "brunch lunch"
+    "dinner dessert";
+    font-family: 'Poiret One', sans-serif;
+    color: var(--main_text_color);
+    width: 85%;
+    margin: auto;
+
+    .menu_category {
+        text-align: center;
+        border-bottom: 1px solid var(--main_text_color);
+        border-top: 1px solid var(--main_text_color);
+        padding-block: 1rem;
+        margin: auto {
+            left: 0.3rem;
+            right: 0.3rem;
+            top: 10rem;
+            bottom: 1.5rem;
+        }
+    }
+    hr.line_mobile {
+        display: none;
+    }
+// ---------------------------------------------------------
+//        Here you can modify the description of the dishes
+// ---------------------------------------------------------
+    p.name_dish {
+        line-height: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-align: start;
+    }
+
+    p.dish_description {
+        letter-spacing: 2px;
+        margin-bottom: 4.5rem;
+    }
+}
+
+.line_before_footer {
+    margin-inline: 3rem;
+    margin-top: 5rem;
+    margin: auto {
+        top: 5rem;
+        left: 3rem;
+        right: 3rem;
+        bottom: 6rem;
+    }
+    color: var(--main_text_color);
+}
+
+// ---------------------------------------------------------
+//             Here you can modify the FOOTER section
+// ---------------------------------------------------------
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5rem;
+    color: var(--main_text_color);
+
+    #address_footer {
+        font-family: 'Arimo', sans-serif;
+    }
+    #brand_logo_footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            @include brand_logo();
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-left: -10rem;
+    }
+
+    #footer_icons svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--main_text_color);
+        margin-left: 0.5rem;
+
+        &:hover {
+            fill: #AAE6FF;
+            stroke: var(--blueish_menu_button_color); 
+            stroke-width: 3px; 
+            transition: 0.3s;
+        }
+    }
+}
+
+
+// ---------------------------------------------------------
+//                       MEDIA QUERIES
+// ---------------------------------------------------------
+
+@media screen and (max-width: 990px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+            "brunch"
+            "lunch"
+            "dinner"
+            "dessert";
+        border-bottom: var(--main_text_color);
+    }
+
+    hr.line_mobile {
+        display: block;
+    }
+    
+    @mixin brand_logo_mobile {
+        font-size: 2rem;
+        margin-top: 1rem;
+        margin-left: 1.5rem;
+        letter-spacing: 3px;
+        border-bottom: 1px solid var(--main_text_color);
+    }
+    
+    #nav_bar {
+        #brand-image {
+            h1 {
+                @include brand_logo_mobile();
+                
+            }
+        }
+    }
+
+    footer {
+        justify-content: space-between;
+        #brand_logo_footer h1 {
+            @include brand_logo_mobile();
+            padding-top: 1.5rem;
+            margin-left: 2.5rem;
+        }
+        #footer_icons {
+            margin-right: 2rem;
+        }
+
+        #address_footer {
+            display: flex;
+            width: fit-content;
+            justify-content: center;
+            align-items: center;
+
+        }
+    }
+}
