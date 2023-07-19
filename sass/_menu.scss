@@ -49,3 +49,84 @@ body {
         bottom: 10rem;
     }
 }
+
+// ---------------------------------------------------------
+//             Here you can modify the nav section
+// ---------------------------------------------------------      
+
+#nav_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    #brand-image {
+        h1 {
+            @include brand_logo()
+        }
+    }
+
+    #buttons_top {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        .navbar-link {
+            @include navbar_link;
+        }
+
+        .navbar-link--selected {
+            @include navbar-link;
+            background-color: var(--hover_selected_nav_link);
+        }
+    }
+}
+
+// ---------------------------------------------------------
+//             Here you can modify the menu section
+// ---------------------------------------------------------
+
+h1 {
+    text-align: center;
+    margin-top: 10rem;
+}
+
+#brunch-section {grid-area: brunch;}
+#lunch_section {grid-area: lunch;}
+#dinner_section {grid-area: dinner;}
+#dessert_section {grid-area: dessert;}
+
+#container {
+    display: grid;
+    justify-content: space-around;
+    justify-items: center;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+    "brunch lunch"
+    "dinner dessert";
+
+    .menu_category {
+        text-align: center;
+        border-bottom: 1px solid var(--main_text_color);
+        border-top: 1px solid var(--main_text_color);
+        padding-block: 1rem;
+        margin: auto {
+            left: 1rem;
+            right: 1rem;
+            top: 10rem;
+            bottom: 1.5rem;
+        }
+    }
+
+    p.name_dish {
+        line-height: 2rem;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        text-align: start;
+    }
+
+    p.dish_description {
+        letter-spacing: 2px;
+        margin-bottom: 4.5rem;
+    }
+}
