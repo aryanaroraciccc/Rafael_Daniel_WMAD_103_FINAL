@@ -8,17 +8,49 @@
   <script src="js/main.js"></script>
 </head>
 <body>
-  <header>
-    <div class="branch-logo">Flavor Mosaic</div>
-    <nav class="top-menu">
-      <a href="/">Home</a>
-      <a href="./menu.html">Menu</a>
-      <a href="./history.html">History</a>
-      <a href="./contact.html">Contact</a>
+  <header class="header">
+    <nav id="nav_bar">
+      <div id="brand-image">
+          <h1>Flavor Mosaic</h1>
+      </div>
+
+      <div id="buttons_top" class="navbar">
+          <a class="navbar-link navbar-link--selected" href="/">Home</a>
+          <a class="navbar-link" href="menu.html">Menu</a>
+          <a class="navbar-link" href="history.html">History</a>
+          <a class="navbar-link" href="contact.html">Contact</a>
+      </div>
     </nav>
+
+    <p class="header-description">Embark on an exquisite culinary journey through our flavor mosaic.</p>
+  </header>
+
+  <div class="container" style="height: 100vh;">
     <div class="banner">
       <p class="banner-description">Embark on an exquisite culinary journey through our flavor mosaic.</p>
     </div>
-  </header>
+  </div>
+
+  <hr class="footer">
+
+  <footer>
+    <div id="brand_logo_footer">
+        <h1>
+            Flavor Mosaic
+        </h1>
+    </div>
+
+    <div id="address_footer">
+        <p>
+            Address: Vancouver
+        </p>
+    </div>
+
+    <div id="footer_icons">
+        <img src="./images/svg/instagram.svg" alt="instagram icon">
+        <img src="./images/svg/facebook.svg" alt="facebook icon">
+    </div>
+
+</footer>
 </body>
 </html>
