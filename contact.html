@@ -27,7 +27,84 @@
 
   <div class="container">
 
-    
+    <section class="welcome">
+      <h2 class="welcome-heading">Come to Visit Us</h2>
+      <p class="welcome-description">We welcome all our guests as part of the family. Come visit us in beautiful Vancouver restaurant and enjoy the city view along with our award-winning cuisine.</p>
+      <section class="welcome-map">
+        <img src="./images/vancouver-map.png" alt="Vancouver Map" />
+      </section>
+      <section class="welcome-data">
+        <section class="welcome-data-telephone">
+          <img class="welcome-data-icon" src="./images/svg/phone_icon.svg" alt="Phone Icon">
+          <span>604-333-4444</span>
+        </section>
+        <section class="welcome-data-email">
+          <img class="welcome-data-icon" src="./images/svg/envelope-email-icon.svg" alt="Mail Icon">
+          <span>contact@flavormosaic.ca</span>
+        </section>
+        <section class="welcome-data-hours">
+          <h3>Schedule Hours</h3>
+          <ul>
+            <li>Tuesday - Friday 10AM - 11PM</li>
+            <li>Saturday - Sunday 12 PM - 12AM</li>
+            <li>Monday - Closed </li>
+          </ul>
+        </section>
+      </section>
+    </section>
+
+    <section class="reservations">
+      <h2 class="reservations-heading">Reservations</h2>
+      <form class="form">
+        <section class="form-container">
+          <section class="form-group form-full_name">
+            <input
+              id="full_name"
+              type="text"
+              name="full_name"
+              placeholder="Full Name"
+              autocomplete="off"
+            />
+          </section>
+          <section class="form-group form-email">
+            <input
+              id="email"
+              type="email"
+              name="email"
+              placeholder="E-mail Address"
+              autocomplete="off"
+            />
+          </section>
+          <section class="form-group form-quantity">
+            <input
+              id="quantity"
+              type="number"
+              name="quantity"
+              min="0"
+              placeholder="Quantity"
+              autocomplete="off"
+            />
+          </section>
+          <section class="form-group form-date">
+            <input id="date" type="date" name="date" />
+          </section>
+          <section class="form-group form-time">
+            <input id="time" type="time" name="time" />
+          </section>
+          <section class="form-group form-requirements">
+            <textarea
+              id="requirements"
+              name="requirements"
+              placeholder="Special Requirements"
+              autocomplete="off"
+            ></textarea>
+          </section>
+          <section class="form-button">
+            <button type="submit">Book</button>
+          </section>
+        </section>
+      </form>
+    </section>
 
   </div>
 
