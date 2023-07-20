@@ -115,6 +115,7 @@ body {
         flex-direction: row;
         align-items: center;
         margin: auto {
+            top: 15rem;
             bottom: 15rem;
         }
 
@@ -122,6 +123,8 @@ body {
             @include paragraph_style();
             margin-left: 6rem;
             color: var(--main_text_color);
+            text-align: justify;
+            letter-spacing: 2px;
         }
 
         img {
@@ -133,32 +136,32 @@ body {
 }
 
 #history_header {
-display: flex;
-align-items: center;
-justify-content: center;
-height: 500px;
-background-image: url(../images/history-background.jpeg);
-background-size:cover;
-background-repeat: no-repeat;
-background-position: center;
-margin-bottom: 10rem;
-&:after {
-    content: "";
-    width: 100%;
-    height: 80%;
-    position: absolute;
-    background-color: #000;
-    background-size: cover;
-    opacity: 0.3;
-    z-index: 100;
-    }
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../images/history-background.jpeg);
+    height: 500px;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &:after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #000000;
+        background-size: cover;
+        opacity: 0.3;
+        z-index: 100;
+        }
 
-    h2.section-title {
-        @include h2_title_section;
-        font-size: 4.5rem;
-        color: var(--main_text_color);
-        z-index: 150;
-    }
+        h2.section-title {
+            @include h2_title_section;
+            font-size: 4.5rem;
+            color: var(--main_text_color);
+            z-index: 150;
+        }
 }
 
 // ---------------------------------------------------------------------
@@ -188,7 +191,9 @@ margin-bottom: 10rem;
 
     p {
         @include paragraph_style();
-        text-align:center;
+        text-align:justify;
+        color: var(--main_text_color);
+        letter-spacing: 2px;
     }
 }
 
@@ -210,7 +215,6 @@ margin-bottom: 10rem;
     "brunch lunch"
     "dinner dessert";
     justify-items: center;
-    margin-inline: 15rem;
     gap: 100px;
 
     .meal_box {
@@ -273,42 +277,76 @@ margin-bottom: 10rem;
 }
 
 // ---------------------------------------------------------------------
-//                          Media Queries!!!
+//                   *******MEDIA QUERIES*******
 // ---------------------------------------------------------------------
 
+
+
+
+// ---------------------------------------------------------------------
+//                          Tablet Style
+// ---------------------------------------------------------------------
+@mixin brand_logo_mobile {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    letter-spacing: 3px;
+    border-bottom: 1px solid var(--main_text_color);
+}
+
+
 @media screen and (max-width: 990px) {
-    #nav_bar #brand-image h1 {
-        font-size: 2rem;
-        margin-top: 1rem;
-        margin-left: 1.5rem;
-        letter-spacing: 3px;
-        border-bottom: 1px solid var(--main_text_color);
-    }
-
-    #history_header { grid-area: title; }
-    #image_hands { grid-area: hands; }
-    #paragraph_ { grid-area: paragraph; }
-
-    #history_section {
-        display: grid;
-        grid-template-columns: auto;
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas:
-            "title"
-            "hands"
-            "paragraph";
-
-    #history_paragraph {
+    #nav_bar {
+        display: flex;
         flex-direction: column;
-    }}
-
-
-    #image_hands img {
-        width: 200px;
-        height: auto;
+        
+        #brand-image {
+            h1 {
+                @include brand_logo_mobile;
+                width: fit-content;
+                
+            }
+        }
     }
 
 
+//                        Main content Section
+    #history_header { 
+        // grid-area: title;
+        height: 350px;
+    }
+    // #image_hands { grid-area: hands; }
+    // #paragraph_ { grid-area: paragraph; }
+
+    // #history_section {
+    //     display: grid;
+    //     grid-template-columns: auto;
+    //     grid-template-rows: repeat(3, auto);
+    //     grid-template-areas:
+    //         "title"
+    //         "hands"
+    //         "paragraph";
+    #history_section {
+
+        #history_paragraph {
+            flex-direction: column;
+            margin: auto {
+                top: 10rem;
+                bottom: 10rem;
+        }}
+
+        p {
+            margin: 0 !important;
+            margin-top: 1rem !important;
+        }
+        
+        #image_hands img {
+            width: 320px;
+            height: auto;
+        }
+    }
+
+//                         Meals Section
     #meals-section {
         display: grid;
         grid-template-columns: auto;
@@ -324,4 +362,50 @@ margin-bottom: 10rem;
             margin-top:0;
         }
     }
-} 
+}
+
+
+// ---------------------------------------------------------
+//                      Mobile Style
+// ---------------------------------------------------------
+@media screen and (min-width: 390px) and (max-width: 660px) {
+    #history_header { 
+        height: 250px;
+    }
+
+    #history_section {
+        
+        #history_paragraph {
+            flex-direction: column;
+            margin: auto {
+                top: 5rem;
+                bottom: 5rem;
+            }}
+        
+        #image_hands img {
+            width: 220px;
+            height: auto;
+        }
+
+        p {
+            font-size: 1rem !important;
+            line-height: 2.5rem;
+            letter-spacing: 2px;
+        }
+    }
+
+    #philosophy_history_paragraph {
+        #philosophy_title {
+            h2 {
+                margin-block: 5rem;
+            }
+        }
+
+
+        p {
+            font-size: 1rem !important;
+            line-height: 2.5rem;
+            letter-spacing: 2px;
+        }
+    }
+}

@@ -100,11 +100,12 @@ h1.title_section {
 }
 
 .main_title {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
     background-image: url(../images/menu_background.jpeg);
+    height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
