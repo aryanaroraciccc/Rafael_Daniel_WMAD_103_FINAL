@@ -3,6 +3,7 @@
   margin: 0 80px;
   &-heading {
     font-size: 4rem;
+    color: $main_text_color;
     font-family: 'Poiret One', sans-serif;
     text-align: center;
     margin: 0 0 20px 0;
@@ -11,6 +12,7 @@
     font-size: 2rem;
     line-height: 1.5em;
     text-align: center;
+    color: $main_text_color;
   }
   &-map {
     text-align: center;
@@ -30,6 +32,7 @@
     grid-template-rows: repeat(2, 1fr);
     font-size: 1.2rem;
     column-gap: 20px;
+    color: $main_text_color;
 
     &-icon {
       width: 35px;
@@ -72,6 +75,7 @@
   margin: 80px auto;
   &-heading {
     font-size: 3rem;
+    color: $main_text_color;
   }
 }
 
