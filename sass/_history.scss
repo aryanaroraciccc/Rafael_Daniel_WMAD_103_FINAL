@@ -72,7 +72,7 @@ body {
 }
 
 // ---------------------------------------------------------------------
-//             Here you can modify the nav buttons section
+// *            Here you can modify the nav buttons section
 // ---------------------------------------------------------------------
 
 #nav_bar {
@@ -105,7 +105,7 @@ body {
 }
 
 // ---------------------------------------------------------------------
-//             Here you can modify the first history section
+//*             Here you can modify the first history section
 // ---------------------------------------------------------------------
 
 #history_section {
@@ -203,7 +203,7 @@ body {
 //           *****ANIMATION ENDS****
 
 // ---------------------------------------------------------------------
-//             Here you can modify the philosophy section
+//*             Here you can modify the philosophy section
 // ---------------------------------------------------------------------
 
 #philosophy_history_paragraph {
@@ -236,7 +236,7 @@ body {
 }
 
 // ---------------------------------------------------------------------
-//             Here you can modify the Meals section
+// *            Here you can modify the Meals section
 // ---------------------------------------------------------------------
 
 #meals-section {
@@ -327,7 +327,7 @@ body {
 
 
 // ---------------------------------------------------------------------
-//                          Tablet Style
+//  *                        Tablet Style
 // ---------------------------------------------------------------------
 @mixin brand_logo_mobile {
     font-size: 2rem;
@@ -409,7 +409,7 @@ body {
 
 
 // ---------------------------------------------------------
-//                      Mobile Style
+//*                      Mobile Style
 // ---------------------------------------------------------
 @media screen and (min-width: 390px) and (max-width: 660px) {
     #history_header { 
