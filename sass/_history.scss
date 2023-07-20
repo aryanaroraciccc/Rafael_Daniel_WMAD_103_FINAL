@@ -145,6 +145,20 @@ body {
     background-size:cover;
     background-repeat: no-repeat;
     background-position: center;
+    animation-name: smoothZoom;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    h2 {
+        animation-name: smoothZoom-reverse;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
     &:after {
         content: "";
         width: 100%;
@@ -163,6 +177,30 @@ body {
             z-index: 150;
         }
 }
+
+//           *****main image ANIMATION****
+
+@keyframes smoothZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes smoothZoom-reverse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+//           *****ANIMATION ENDS****
 
 // ---------------------------------------------------------------------
 //             Here you can modify the philosophy section
