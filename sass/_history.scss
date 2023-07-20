@@ -37,6 +37,7 @@ body {
     &:hover {
         background-color: var(--hover_selected_nav_link);
     }
+    z-index: 1000;
 }
 
 @mixin h2_title_section {
@@ -57,6 +58,8 @@ body {
 }
 
 @mixin paragraph_style {
+    width: fit-content;
+    text-align: justify;
     line-height: 3rem;
     font-size: 1.7rem;
     letter-spacing: 2px;
@@ -79,7 +82,9 @@ body {
 
     #brand-image {
         h1 {
-            @include brand_logo()
+            @include brand_logo();
+            position: relative;
+            z-index: 150;
         }
     }
 
@@ -105,12 +110,6 @@ body {
 
 #history_section {
 
-    h2.section-title {
-        @include h2_title_section;
-        font-size: 4.5rem;
-        color: var(--main_text_color);
-    }
-
     #history_paragraph {
         display: flex;
         flex-direction: row;
@@ -133,6 +132,34 @@ body {
     }
 }
 
+#history_header {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 500px;
+background-image: url(../images/history-background.jpeg);
+background-size:cover;
+background-repeat: no-repeat;
+background-position: center;
+margin-bottom: 10rem;
+&:after {
+    content: "";
+    width: 100%;
+    height: 80%;
+    position: absolute;
+    background-color: #000;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: 100;
+    }
+
+    h2.section-title {
+        @include h2_title_section;
+        font-size: 4.5rem;
+        color: var(--main_text_color);
+        z-index: 150;
+    }
+}
 
 // ---------------------------------------------------------------------
 //             Here you can modify the philosophy section
@@ -246,52 +273,6 @@ body {
 }
 
 // ---------------------------------------------------------------------
-//             Here you can modify the footer section
-// ---------------------------------------------------------------------
-
-hr.footer {
-    margin: auto {
-        top: 3rem;
-        bottom: 6rem;
-        left: 1.2rem;
-        right: 1.2rem;
-    }
-}
-
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-        -bottom: 5rem;
-    #brand_logo_footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            @include brand_logo();
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-    }
-
-    p {
-        font-size: 1.6rem;
-        text-align: center;
-        margin-left: -10rem;
-    }
-
-    #footer_icons img {
-        width: 40px;
-        height: 40px;
-        filter: invert(100%);
-        margin-left: 0.5rem;
-    }
-}
-
-
-// ---------------------------------------------------------------------
 //                          Media Queries!!!
 // ---------------------------------------------------------------------
 
@@ -304,19 +285,23 @@ footer {
         border-bottom: 1px solid var(--main_text_color);
     }
 
-    #history_title { grid-area: title; }
+    #history_header { grid-area: title; }
     #image_hands { grid-area: hands; }
     #paragraph_ { grid-area: paragraph; }
 
     #history_section {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: auto;
         grid-template-rows: repeat(3, auto);
         grid-template-areas:
             "title"
             "hands"
             "paragraph";
-    }
+
+    #history_paragraph {
+        flex-direction: column;
+    }}
+
 
     #image_hands img {
         width: 200px;
@@ -334,8 +319,11 @@ footer {
         "lunch"
         "dinner"
         "dessert";
-    }
 
+        .meal_box {
+            margin-top:0;
+        }
+    }
 
     footer {
         justify-content: space-between;

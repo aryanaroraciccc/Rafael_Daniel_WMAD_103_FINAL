@@ -1,3 +1,4 @@
+
 :root {
     --main_text_color: #fffbe6;
     --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
@@ -59,12 +60,12 @@ body {
     flex-direction: row;
     justify-content: space-between;
     color: var(--main_text_color);
-    position: relative;
-    z-index: 1000;
 
     #brand-image {
         h1 {
-            @include brand_logo()
+            @include brand_logo();
+            position: relative;
+            z-index: 150;
         }
     }
 
@@ -82,7 +83,8 @@ body {
             background-color: var(--hover_selected_nav_link);
         }
     }
-}
+}   
+
 
 // ---------------------------------------------------------
 //             Here you can modify the menu section
@@ -181,54 +183,6 @@ h1.title_section {
 }
 
 // ---------------------------------------------------------
-//             Here you can modify the FOOTER section
-// ---------------------------------------------------------
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 5rem;
-    color: var(--main_text_color);
-
-    #address_footer {
-        font-family: 'Arimo', sans-serif;
-    }
-    #brand_logo_footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            @include brand_logo();
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-    }
-
-    p {
-        font-size: 1.6rem;
-        text-align: center;
-        margin-left: -10rem;
-    }
-
-    #footer_icons svg {
-        width: 40px;
-        height: 40px;
-        fill: var(--main_text_color);
-        margin-left: 0.5rem;
-
-        &:hover {
-            fill: #AAE6FF;
-            stroke: var(--blueish_menu_button_color); 
-            stroke-width: 3px; 
-            transition: 0.3s;
-        }
-    }
-}
-
-
-// ---------------------------------------------------------
 //                       MEDIA QUERIES
 // ---------------------------------------------------------
 
@@ -243,12 +197,14 @@ footer {
             "dinner"
             "dessert";
         border-bottom: var(--main_text_color);
+        width: 90%;
+        margin: auto;
+
+        h2.menu_category {
+            margin-top: 3rem;
+        }
     }
 
-    hr.line_mobile {
-        display: block;
-    }
-    
     @mixin brand_logo_mobile {
         font-size: 2rem;
         margin-top: 1rem;
@@ -257,32 +213,47 @@ footer {
         border-bottom: 1px solid var(--main_text_color);
     }
     
-    #nav_bar {
-        #brand-image {
-            h1 {
-                @include brand_logo_mobile();
-                
+    body {
+        
+        #nav_bar {
+            display: flex;
+            flex-direction: column;
+            
+            #brand-image {
+                h1 {
+                    @include brand_logo_mobile();
+                    width: fit-content;
+                    
+                }
             }
         }
-    }
-
-    footer {
-        justify-content: space-between;
-        #brand_logo_footer h1 {
-            @include brand_logo_mobile();
-            padding-top: 1.5rem;
-            margin-left: 2.5rem;
-        }
-        #footer_icons {
-            margin-right: 2rem;
-        }
-
-        #address_footer {
+        
+        footer {
+            // #brand_logo_footer {grid-area: logo;}
+            // #address_footer {grid-area: address;}
+            // #footer_icons { grid-area: icons;}
+            // display: grid;
+            // grid-template-columns: auto;
+            // grid-template-rows: repeat(3, auto);
+            // grid-template-areas: 
+            // "logo"
+            // "address"
+            // "icons";
             display: flex;
-            width: fit-content;
-            justify-content: center;
-            align-items: center;
-
+            flex-direction: column;
+            
+            #brand_logo_footer h1 {
+                @include brand_logo_mobile();
+                padding-top: 1.5rem;
+                margin-left: 2.5rem;
+            }
+            #footer_icons {
+                margin-right: 2rem;
+            }
+            
+            #address_footer {
+                width: 300px;
+            }
         }
     }
 }

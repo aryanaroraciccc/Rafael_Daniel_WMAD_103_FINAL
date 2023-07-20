@@ -1,0 +1,52 @@
+hr.footer {
+    margin: auto {
+        top: 3rem;
+        bottom: 6rem;
+        left: 1.2rem;
+        right: 1.2rem;
+    }
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 5rem;
+    color: var(--main_text_color);
+
+    #address_footer {
+        font-family: 'Arimo', sans-serif;
+        width: fit-content;
+    }
+    #brand_logo_footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        h1 {
+            @include brand_logo();
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+
+    p {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    #footer_icons svg {
+        width: 40px;
+        height: 40px;
+        fill: var(--main_text_color);
+        margin-left: 0.5rem;
+
+        &:hover {
+            fill: #AAE6FF;
+            stroke: var(--blueish_menu_button_color); 
+            stroke-width: 3px; 
+            transition: 0.3s;
+        }
+    }
+}
