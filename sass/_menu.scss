@@ -138,6 +138,7 @@ h1.title_section {
     color: var(--main_text_color);
     width: 85%;
     margin: auto;
+    gap: 5rem;
 
     .menu_category {
         text-align: center;
@@ -147,7 +148,7 @@ h1.title_section {
         margin: auto {
             left: 0.3rem;
             right: 0.3rem;
-            top: 10rem;
+            top: 5rem;
             bottom: 1.5rem;
         }
     }
@@ -183,9 +184,14 @@ h1.title_section {
 }
 
 // ---------------------------------------------------------
-//                       MEDIA QUERIES
+//               *******MEDIA QUERIES*******
 // ---------------------------------------------------------
 
+
+
+// ---------------------------------------------------------
+//                          Tablet Style
+// ---------------------------------------------------------
 @media screen and (max-width: 990px) {
     #container {
         display: grid;
@@ -221,39 +227,51 @@ h1.title_section {
             
             #brand-image {
                 h1 {
-                    @include brand_logo_mobile();
+                    @include brand_logo_mobile;
                     width: fit-content;
                     
                 }
             }
         }
-        
-        footer {
-            // #brand_logo_footer {grid-area: logo;}
-            // #address_footer {grid-area: address;}
-            // #footer_icons { grid-area: icons;}
-            // display: grid;
-            // grid-template-columns: auto;
-            // grid-template-rows: repeat(3, auto);
-            // grid-template-areas: 
-            // "logo"
-            // "address"
-            // "icons";
-            display: flex;
-            flex-direction: column;
-            
-            #brand_logo_footer h1 {
-                @include brand_logo_mobile();
-                padding-top: 1.5rem;
-                margin-left: 2.5rem;
-            }
-            #footer_icons {
-                margin-right: 2rem;
-            }
-            
-            #address_footer {
-                width: 300px;
-            }
+    }
+
+    .main_title {
+        height: 350px;
+    }
+}
+// ---------------------------------------------------------
+//                           Mobile Style
+// ---------------------------------------------------------
+@media screen and (min-width: 390px) and (max-width: 660px)  {
+
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+            "brunch"
+            "lunch"
+            "dinner"
+            "dessert";
+        border-bottom: var(--main_text_color);
+        width: 90%;
+        margin: auto;
+        font-size: 1rem;
+
+        p.name_dish {
+            font-size: 1rem;
         }
+
+        h2.menu_category {
+            margin-top: 3rem;
+        }
+
+        .meal_box {
+            margin-bottom: -2rem;
+        }
+    }
+
+    .main_title {
+        height: 250px;
     }
 }
