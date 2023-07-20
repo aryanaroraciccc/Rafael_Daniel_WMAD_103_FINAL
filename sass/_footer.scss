@@ -23,6 +23,13 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+        a {
+            color: var(--main_text_color);
+        }
+        
+        &:hover {
+            color: var(--main_text_color)
+        }
 
         h1 {
             @include brand_logo();
