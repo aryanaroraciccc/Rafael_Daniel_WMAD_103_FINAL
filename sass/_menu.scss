@@ -99,6 +99,7 @@ h1.title_section {
     position: relative;
 }
 
+//           *****main image style****
 .main_title {
     position: relative;
     display: flex;
@@ -109,6 +110,20 @@ h1.title_section {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    animation-name: smoothZoom;
+    animation-duration: 5.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    h1 {
+        animation-name: smoothZoom-reverse;
+        animation-duration: 5.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
     &:after {
         content: "";
         width: 100%;
@@ -118,8 +133,32 @@ h1.title_section {
         opacity: 0.3;
         z-index: 100;
     }
-
 }
+
+//           *****main image ANIMATION****
+
+@keyframes smoothZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes smoothZoom-reverse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+//           *****ANIMATION ENDS****
+
 
 #brunch-section {grid-area: brunch;}
 #lunch_section {grid-area: lunch;}
