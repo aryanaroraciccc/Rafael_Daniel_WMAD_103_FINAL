@@ -59,7 +59,7 @@ footer {
 }
 
 // -----------------------------------------------------
-//                  *******MEDIA QUERIES*******
+//               *******MEDIA QUERIES*******
 // -----------------------------------------------------
 
 
@@ -97,7 +97,7 @@ footer {
 }
 
 // ---------------------------------------------------------
-//                           Mobile Style
+//                       Mobile Style
 // ---------------------------------------------------------
 @media screen and (min-width: 300px) and (max-width: 660px) {
     footer {
@@ -123,13 +123,13 @@ footer {
 
         #brand_logo_footer h1 {
             @include brand_logo_mobile;
-            margin-left: -9rem;
-            margin-bottom: 3rem;
+            // margin-left: -9rem;
+            // margin-bottom: 3rem;
             padding: 0;
         }
 
             #footer_icons {
-                padding-left: 20rem;
+                // padding-left: 20rem;
             }
     }
 }
