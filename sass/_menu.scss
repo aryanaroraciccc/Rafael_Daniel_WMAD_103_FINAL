@@ -52,7 +52,7 @@ body {
 }
 
 // ---------------------------------------------------------
-//             Here you can modify the nav section
+//*             Here you can modify the nav section
 // ---------------------------------------------------------      
 
 #nav_bar {
@@ -73,7 +73,7 @@ body {
 
 
 // ---------------------------------------------------------
-//             Here you can modify the menu section
+//*             Here you can modify the menu section
 // ---------------------------------------------------------
 
 h1.title_section {
@@ -182,7 +182,7 @@ h1.title_section {
         display: none;
     }
 // ---------------------------------------------------------
-//        Here you can modify the description of the dishes
+//*        Here you can modify the description of the dishes
 // ---------------------------------------------------------
     p.name_dish {
         line-height: 2rem;
@@ -194,6 +194,7 @@ h1.title_section {
     p.dish_description {
         letter-spacing: 2px;
         margin-bottom: 4.5rem;
+        color: var(--hover_selected_nav_link);
     }
 }
 
@@ -216,7 +217,7 @@ h1.title_section {
 
 
 // ---------------------------------------------------------
-//                          Tablet Style
+// *                         Tablet Style
 // ---------------------------------------------------------
 @media screen and (max-width: 990px) {
     #container {
@@ -266,7 +267,7 @@ h1.title_section {
     }
 }
 // ---------------------------------------------------------
-//                           Mobile Style
+//*                      Mobile Style
 // ---------------------------------------------------------
 @media screen and (min-width: 390px) and (max-width: 660px)  {
 
