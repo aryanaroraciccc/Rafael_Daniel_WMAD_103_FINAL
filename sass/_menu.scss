@@ -1,3 +1,4 @@
+
 :root {
     --main_text_color: #fffbe6;
     --blueish_menu_button_color: rgba(47, 72, 88, 0.53);
@@ -51,7 +52,7 @@ body {
 }
 
 // ---------------------------------------------------------
-//             Here you can modify the nav section
+//*             Here you can modify the nav section
 // ---------------------------------------------------------      
 
 #nav_bar {
@@ -60,32 +61,19 @@ body {
     justify-content: space-between;
     color: var(--main_text_color);
     position: relative;
-    z-index: 1000;
 
     #brand-image {
         h1 {
-            @include brand_logo()
+            @include brand_logo();
+            position: relative;
+            z-index: 150;
         }
     }
+}   
 
-    #buttons_top {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-        .navbar-link {
-            @include navbar_link;
-        }
-
-        .navbar-link--selected {
-            @include navbar-link;
-            background-color: var(--hover_selected_nav_link);
-        }
-    }
-}
 
 // ---------------------------------------------------------
-//             Here you can modify the menu section
+//*             Here you can modify the menu section
 // ---------------------------------------------------------
 
 h1.title_section {
@@ -97,15 +85,31 @@ h1.title_section {
     position: relative;
 }
 
+//           *****main image style****
 .main_title {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 500px;
     background-image: url(../images/menu_background.jpeg);
+    height: 500px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    animation-name: smoothZoom;
+    animation-duration: 5.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    h1 {
+        animation-name: smoothZoom-reverse;
+        animation-duration: 5.5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+    }
+
     &:after {
         content: "";
         width: 100%;
@@ -115,8 +119,32 @@ h1.title_section {
         opacity: 0.3;
         z-index: 100;
     }
-
 }
+
+//           *****main image ANIMATION****
+
+@keyframes smoothZoom {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes smoothZoom-reverse {
+    0% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+//           *****ANIMATION ENDS****
+
 
 #brunch-section {grid-area: brunch;}
 #lunch_section {grid-area: lunch;}
@@ -136,6 +164,7 @@ h1.title_section {
     color: var(--main_text_color);
     width: 85%;
     margin: auto;
+    gap: 5rem;
 
     .menu_category {
         text-align: center;
@@ -145,7 +174,7 @@ h1.title_section {
         margin: auto {
             left: 0.3rem;
             right: 0.3rem;
-            top: 10rem;
+            top: 5rem;
             bottom: 1.5rem;
         }
     }
@@ -153,7 +182,7 @@ h1.title_section {
         display: none;
     }
 // ---------------------------------------------------------
-//        Here you can modify the description of the dishes
+//*        Here you can modify the description of the dishes
 // ---------------------------------------------------------
     p.name_dish {
         line-height: 2rem;
@@ -165,6 +194,7 @@ h1.title_section {
     p.dish_description {
         letter-spacing: 2px;
         margin-bottom: 4.5rem;
+        color: var(--hover_selected_nav_link);
     }
 }
 
@@ -181,57 +211,14 @@ h1.title_section {
 }
 
 // ---------------------------------------------------------
-//             Here you can modify the FOOTER section
+//               *******MEDIA QUERIES*******
 // ---------------------------------------------------------
-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    padding-bottom: 5rem;
-    color: var(--main_text_color);
 
-    #address_footer {
-        font-family: 'Arimo', sans-serif;
-    }
-    #brand_logo_footer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        h1 {
-            @include brand_logo();
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-    }
-
-    p {
-        font-size: 1.6rem;
-        text-align: center;
-        margin-left: -10rem;
-    }
-
-    #footer_icons svg {
-        width: 40px;
-        height: 40px;
-        fill: var(--main_text_color);
-        margin-left: 0.5rem;
-
-        &:hover {
-            fill: #AAE6FF;
-            stroke: var(--blueish_menu_button_color); 
-            stroke-width: 3px; 
-            transition: 0.3s;
-        }
-    }
-}
 
 
 // ---------------------------------------------------------
-//                       MEDIA QUERIES
+// *                         Tablet Style
 // ---------------------------------------------------------
-
 @media screen and (max-width: 990px) {
     #container {
         display: grid;
@@ -243,12 +230,14 @@ footer {
             "dinner"
             "dessert";
         border-bottom: var(--main_text_color);
+        width: 90%;
+        margin: auto;
+
+        h2.menu_category {
+            margin-top: 3rem;
+        }
     }
 
-    hr.line_mobile {
-        display: block;
-    }
-    
     @mixin brand_logo_mobile {
         font-size: 2rem;
         margin-top: 1rem;
@@ -257,32 +246,59 @@ footer {
         border-bottom: 1px solid var(--main_text_color);
     }
     
-    #nav_bar {
-        #brand-image {
-            h1 {
-                @include brand_logo_mobile();
-                
+    body {
+        
+        #nav_bar {
+            display: flex;
+            flex-direction: column;
+            
+            #brand-image {
+                h1 {
+                    @include brand_logo_mobile;
+                    width: fit-content;
+                    
+                }
             }
         }
     }
 
-    footer {
-        justify-content: space-between;
-        #brand_logo_footer h1 {
-            @include brand_logo_mobile();
-            padding-top: 1.5rem;
-            margin-left: 2.5rem;
-        }
-        #footer_icons {
-            margin-right: 2rem;
+    .main_title {
+        height: 350px;
+    }
+}
+// ---------------------------------------------------------
+//*                      Mobile Style
+// ---------------------------------------------------------
+@media screen and (min-width: 390px) and (max-width: 660px)  {
+
+    #container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, auto);
+        grid-template-areas: 
+            "brunch"
+            "lunch"
+            "dinner"
+            "dessert";
+        border-bottom: var(--main_text_color);
+        width: 90%;
+        margin: auto;
+        font-size: 1rem;
+
+        p.name_dish {
+            font-size: 1rem;
         }
 
-        #address_footer {
-            display: flex;
-            width: fit-content;
-            justify-content: center;
-            align-items: center;
-
+        h2.menu_category {
+            margin-top: 3rem;
         }
+
+        .meal_box {
+            margin-bottom: -2rem;
+        }
+    }
+
+    .main_title {
+        height: 250px;
     }
 }

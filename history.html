@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
-
     <title>History</title>
+    <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -23,12 +23,20 @@
         </div>
     </nav>
 
+    <div id="hamburger-icon" class="hamburger-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#2f4858">
+            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+        </svg> 
+    </div>
+
+    <div id="history_header">
+        <h2 class="section-title">History</h2>
+    </div>
+
     <div class="container">
         <section id="history_section">
+            
 
-            <div id="history_title">
-                <h2 class="section-title">History</h2>
-            </div>
 
             <div id="history_paragraph">
                 
@@ -38,7 +46,14 @@
 
                 <div id="paragraph_">
                     <p>
-                        Founded in 2002 by chefs Daniel and Rafael, the <br>Vancouver restaurant swiftly rose to prominence,<br> earning a coveted Michelin star. Their culinary <br>collaboration showcased a fusion of local ingredients <br>and global influences, resulting in an innovative and <br>tantalizing menu. With their unwavering dedication to <br> quality and creative expertise, they established <br>themselves as luminaries in Vancouver's dynamic <br> dining scene, delighting guests with an unforgettable <br>gastronomic experience.
+                        Founded in 2002 by chefs Daniel and Rafael, the
+                        Vancouver restaurant swiftly rose to prominence,
+                        earning a coveted Michelin star. Their culinary
+                        collaboration showcased a fusion of local ingredients
+                        and global influences, resulting in an innovative and 
+                        tantalizing menu. With their unwavering dedication to  
+                        quality and creative expertise, they established 
+                        themselves as luminaries in Vancouver's dynamic dining scene, delighting guests with an unforgettable gastronomic experience.
                     </p>
                 </div>
             </div>
@@ -50,11 +65,11 @@
             </div>
 
             <p>
-                Welcome to our world of colorful cuisine! Each dish is a vibrant masterpiece,<br> 
-                bursting with flavors and hues. From fiery red curries to verdant green salads,<br> 
-                our menu is a kaleidoscope of taste and visual delight. Savor saffron-infused <br>
-                rice adorned with ruby-red pomegranate jewels, or indulge in our golden<br>
-                turmeric-spiced chickpea stew. Join us on this gastronomic journey where colors<br> 
+                Welcome to our world of colorful cuisine! Each dish is a vibrant masterpiece, 
+                bursting with flavors and hues. From fiery red curries to verdant green salads, 
+                our menu is a kaleidoscope of taste and visual delight. Savor saffron-infused 
+                rice adorned with ruby-red pomegranate jewels, or indulge in our golden
+                turmeric-spiced chickpea stew. Join us on this gastronomic journey where colors 
                 and flavors unite to create a feast for your senses.
             </p>
         </section>
@@ -64,19 +79,20 @@
             <div id="brunch_box" class="meal_box">
                 <h3 class="meals_h3">Brunch</h3>
                 <div class="meal_container">
-
-                    <img src="./images/brunch.png" alt="A brunch meal image">
+                        <img src="./images/brunch.png" alt="A brunch meal image">
+                <a href="./menu.html#brunch-section">
                     <div class="text_overlay">
                         <p class="no_display_text">
-                            Discover our mouthwatering<br> 
-                            brunch menu! Dive into fluffy<br> 
-                            pancakes with a berry burst,<br> 
-                            savor creamy avocado toast with<br> 
-                            zesty tomatoes, or indulge in a colorful breakfast burrito. Join<br> 
-                            us for a vibrant morning feast<br> 
+                                Discover our mouthwatering<br> 
+                                brunch menu! Dive into fluffy<br> 
+                                pancakes with a berry burst,<br> 
+                                savor creamy avocado toast with<br> 
+                                zesty tomatoes, or indulge in a colorful breakfast burrito. Join<br> 
+                                us for a vibrant morning feast<br> 
                             that's sure to delight your taste buds!
                         </p>
                     </div>
+                </a>
                 </div>
             </div>
 
@@ -85,18 +101,20 @@
                 <div class="meal_container">
 
                     <img src="./images/schrimp.png" alt="A spaghetti with shrimp meal image">
-                    <div class="text_overlay">
-                        <p class="no_display_text">
-                            Treat yourself to our delightful<br> 
-                            lunch menu! Enjoy vibrant<br> 
-                            salads and savory sandwiches<br> 
-                            bursting with flavors. Our rich<br> 
-                            soups and creative main courses <br>
-                            are sure to make your lunchtime <br>
-                            colorful and unforgettable. Join <br>
-                            us and savor the taste sensations!
-                        </p>
-                    </div>
+                    <a href="./menu.html#lunch_section">
+                        <div class="text_overlay">
+                            <p class="no_display_text">
+                                Treat yourself to our delightful<br> 
+                                lunch menu! Enjoy vibrant<br> 
+                                salads and savory sandwiches<br> 
+                                bursting with flavors. Our rich<br> 
+                                soups and creative main courses <br>
+                                are sure to make your lunchtime <br>
+                                colorful and unforgettable. Join <br>
+                                us and savor the taste sensations!
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -105,36 +123,40 @@
                 <div class="meal_container">
 
                     <img src="./images/dinner.png" alt="A cooked beef meal image">
-                    <div class="text_overlay">
-                        <p class="no_display_text">
-                            Savor our dinner menu: grilled <br>
-                            entrees, seafood delights, and <br>
-                            rich pasta creations adorned <br>
-                            with fresh herbs. End on a sweet <br>
-                            note with delightful desserts. A <br>
-                            dining experience celebrating <br>
-                            taste and visual delight!
-                        </p>
-                    </div>
+                    
+                    <a href="./menu.html#dinner_section">
+                        <div class="text_overlay">
+                            <p class="no_display_text">
+                                Savor our dinner menu: grilled <br>
+                                entrees, seafood delights, and <br>
+                                rich pasta creations adorned <br>
+                                with fresh herbs. End on a sweet <br>
+                                note with delightful desserts. A <br>
+                                dining experience celebrating <br>
+                                taste and visual delight!
+                            </p>
+                        </div>
+                    </a>
                 </div>
             </div>
-
-            <div id="desserts_box">
-                <h3 class="meals_h3">Desserts</h3>
-                <div class="meal_container">
-
-                    <img src="./images/dessert.png" alt="An image with many desserts on a table">
-                    <div class="text_overlay">
-                        <p class="no_display_text">
-                            Indulge in our dessert menu! <br>
-                            Delightful treats that satisfy <br>
-                            your sweet cravings and please <br>
-                            your eyes. A delightful finale to <br>
-                            your dining experience!<br>
-                        </p>
+            <a href="./menu.html#dessert_section">
+                <div id="desserts_box">
+                    <h3 class="meals_h3">Desserts</h3>
+                    <div class="meal_container">
+                        
+                        <img src="./images/dessert.png" alt="An image with many desserts on a table">
+                        <div class="text_overlay">
+                            <p class="no_display_text">
+                                Indulge in our dessert menu! <br>
+                                Delightful treats that satisfy <br>
+                                your sweet cravings and please <br>
+                                your eyes. A delightful finale to <br>
+                                your dining experience!<br>
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </a>
             </section>
     </div>
 
@@ -144,9 +166,11 @@
 
     <footer>
         <div id="brand_logo_footer">
-            <h1>
-                Flavor Mosaic
-            </h1>
+            <a href="#brand-image">
+                <h1>
+                    Flavor Mosaic
+                </h1>
+            </a>
         </div>
 
         <div id="address_footer">
@@ -156,8 +180,16 @@
         </div>
 
         <div id="footer_icons">
-            <img src="./images/svg/instagram.svg" alt="instagram icon">
-            <img src="./images/svg/facebook.svg" alt="facebook icon">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                    d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+            </svg>
         </div>
 
     </footer>

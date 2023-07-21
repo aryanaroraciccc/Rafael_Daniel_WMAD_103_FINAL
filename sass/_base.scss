@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -7,6 +11,7 @@ body {
   background-color: #222;
   font-family: 'Arimo', sans-serif;
   color: $white;
+  overflow-x: hidden;
 }
 
 a {
@@ -20,3 +25,4 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Poiret One', sans-serif;
 }
+
