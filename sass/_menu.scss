@@ -60,43 +60,13 @@ body {
     flex-direction: row;
     justify-content: space-between;
     color: var(--main_text_color);
+    position: relative;
 
     #brand-image {
         h1 {
             @include brand_logo();
             position: relative;
             z-index: 150;
-        }
-    }
-
-    #buttons_top {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-        .navbar-link {
-            @include navbar_link;
-        }
-
-        .navbar-link--selected {
-            @include navbar-link;
-            background-color: var(--hover_selected_nav_link);
-        }
-        .hamburger-icon {
-            display: none;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            z-index: 1000;
-            svg {
-                fill: $main_text_color;
-                &:hover {
-                    fill: lighten($blueish_menu_button_color, 30%);
-                }
-            }
         }
     }
 }   

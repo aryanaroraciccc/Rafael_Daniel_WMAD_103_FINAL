@@ -19,27 +19,6 @@ body {
     border-bottom: 1px solid var(--main_text_color);
 }
 
-@mixin navbar_link {
-    width: 100px;
-    height: 45px;
-    text-decoration: none;
-    font-family: 'Poiret One', sans-serif;
-    font-size: 1rem;
-    border-radius: 6px;
-    background-color: var(--blueish_menu_button_color);
-    color: var(--main_text_color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1.5rem 1rem 0 1rem;
-    cursor: pointer;
-    transition: background-color 200ms ease-in-out;
-    &:hover {
-        background-color: var(--hover_selected_nav_link);
-    }
-    z-index: 1000;
-}
-
 @mixin h2_title_section {
     font-size: 3rem;
     letter-spacing: 3px;
@@ -85,21 +64,6 @@ body {
             @include brand_logo();
             position: relative;
             z-index: 150;
-        }
-    }
-
-    #buttons_top {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: row;
-
-        .navbar-link {
-            @include navbar_link;
-        }
-
-        .navbar-link--selected {
-            @include navbar-link;
-            background-color: var(--hover_selected_nav_link);
         }
     }
 }
